@@ -1,0 +1,48 @@
+the series of http status code represents the the state of  request or response
+
+1xx-----information message
+2xx-----success msg
+3xx-----redirection
+4xx-----client error
+5xx-----server error
+
+
+few mostly used status code
+
+100------- continue---the request is recieved and action is being performed please continue with send rest of body 
+
+101--------switch protocol-----When client/server request to change the http protocol in the next subsequet requests
+
+200--------success------The server respond with 200 ok stating that reqeust has been fulfilled and here is your resource(in the response body)
+
+201--------created------it is returned in response to PUT request to indicate that the request was successful
+
+
+301--------moved permanetly----- The server return with a msg that the resource the you have asked is moved to different location permanetly and the new url will be listed in the location header
+
+
+
+302--------Found-------This code shows that request url is move to another location temporarily which is also specified in the location header--the client should revert to the original location/url in subsequent requests
+
+304-------Not modified--This code stated that the cache copy of the resource which client has stored has not modified since last timethis code comes when client include the two header in				the request
+			1. If-modified-since
+			2. if-none-match
+			if-modified-since include a date, which represent the time when client got that resource and "if-none-match" contain a ETAG which shows a number which is give to 				every cachable resoureces
+			if both of these condition matched then server will respond with 304 stating the resource is not modified .You can use the cache version
+
+
+
+400-----Bad request---indicate that client submmitted a invalid http request
+
+
+401----Unauthorized-----The resource cannot be granted as it lacks the valid authentication credential
+
+403----forbidden----the server under the request but can not provide due to authorizatino policy
+
+404--- Not found----represent that requested resource does not exist
+
+405---method is not allowed.. when incomatibale method is used for a resourece 
+
+500----internal server error..could be due to client input which can not be understood by the server, cause the unhandled error
+
+503--service unavailable
